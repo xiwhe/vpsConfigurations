@@ -1,0 +1,11 @@
+[Unit]
+Description=Shadow Socket server
+
+[Service]
+Type=simple
+StandardOutput=syslog
+StandardError=syslog
+ExecStart=/home/ubuntu/iptables.py
+
+[Install]
+WantedBy=multi-user.target

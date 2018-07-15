@@ -1,0 +1,11 @@
+[Unit]
+Description=Shadow Socket server
+
+[Service]
+Type=forking
+#ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks/config.json -d start
+ExecStart=/usr/bin/python /usr/local/bin/ssserver -c /etc/shadowsocks/config.json -d start
+
+[Install]
+WantedBy=multi-user.target
+
