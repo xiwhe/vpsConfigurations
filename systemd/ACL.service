@@ -1,5 +1,5 @@
 [Unit]
-Description=Shadow Socket server
+Description=Shadow Socket Rate Limit
 
 [Service]
 Type=simple

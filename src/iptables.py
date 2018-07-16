@@ -24,6 +24,7 @@ class IPtableManager:
     _ports = list()
     _used_traffic = 0
 
+
     def __init__(self, supervise_ports):
 
         self._ports = supervise_ports
@@ -50,6 +51,7 @@ class IPtableManager:
 
         pass
 
+
     def _reset_TRH_limit(self):
         print "start clear limitations"
         clear_accept =  "iptables -Z"
@@ -59,7 +61,7 @@ class IPtableManager:
         
 
     def start_supervising(self):
-        _reset_TRH_limit()
+        self._reset_TRH_limit()
 
 
 if __name__ == "__main__":
