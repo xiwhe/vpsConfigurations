@@ -54,7 +54,7 @@ class IPtableManager:
         print "start clear limitations"
         clear_accept =  "iptables -Z"
         os.system(clear_accept)
-        timer = Timer(30.0, self._reset_TRH_limit)
+        timer = Timer(60*60*24, self._reset_TRH_limit)
         timer.start()
         
 
