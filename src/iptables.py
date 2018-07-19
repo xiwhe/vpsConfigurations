@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # -*- coding: utf-8 -*-
 """
@@ -37,11 +37,11 @@ class IPtableManager:
 
 #        with open("/tmp/ss_used", "rw+") as F:
 #            self._used_traffic = f.read()
-#            print "used: ", self._used_traffic
+#            print("used: ", self._used_traffic,flush=True)
 
         traffic_limit = (TRH_P_M - self._used_traffic)/mothrange/self._ports.__len__()
         
-        print "Data Transfer limit:", traffic_limit
+        print("Data Transfer limit:", traffic_limit, flush=True)
 
         for port in self._ports:
             add_accept =  "iptables -A OUTPUT -p tcp -m quota --quota " + str(traffic_limit) + " -j ACCEPT --sport " + str(port)
