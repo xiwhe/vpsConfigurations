@@ -39,7 +39,7 @@ class IPtableManager:
 #            self._used_traffic = f.read()
 #            print("used: ", self._used_traffic,flush=True)
 
-        traffic_limit = (TRH_P_M - self._used_traffic)/mothrange/self._ports.__len__()
+        traffic_limit = int((TRH_P_M - self._used_traffic)/mothrange/self._ports.__len__())
         
         print("Data Transfer limit:", traffic_limit, flush=True)
 
@@ -53,7 +53,7 @@ class IPtableManager:
 
 
     def _reset_TRH_limit(self):
-        print "start clear limitations"
+        print("start clear limitations")
         clear_accept =  "iptables -Z"
         os.system(clear_accept)
         timer = Timer(60*60*24, self._reset_TRH_limit)
